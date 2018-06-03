@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Themed Background -->
+
+<!--Backboard JumboTron -->
+<!--Card-->
+<div class='container'>
+    <div class='jumbotron'>
+    <div class="view overlay">
+        <div class="mask rgba-white-slight"></div>
+    </a>
+    <div class="card-body text-center mb-3">
+        <!--Title-->
+        <h3 class="card-title mt-2 pb-4"><strong>Welcome Browncoat</strong></h3>
+        <!--Text-->
+        <p class="card-text">Come test your knowledge of the struggle for the 'verse.
+        </p>
+    </div>
+    <div class="row" class="centered">
+            <button type="button" class="btn btn-default">Launch!</button>
+    </div>
+    <div class="row">
+    <div id="timer">
+                    <p>Time remaining:  <span>120</span> Seconds</p>
+                    </div>
+                </div>
+    <div class="row">
+
+        <div id="question1">
+            <p>Question 1<br>
+                <span id="q1"></span></p>
+            <form class="form-inline">
+                    <div class="form-check" id="option1">
+                        <input class="form-check-input" name="group20" type="radio" id="radio120" checked="checked">
+                        <label class="form-check-label" for="radio120">Option 1</label>
+                    </div>
+                
+                    <div class="form-check" id="option2">
+                        <input class="form-check-input" name="group20" type="radio" id="radio121">
+                        <label class="form-check-label" for="radio121">Option 2</label>
+                    </div>
+                
+                    <div class="form-check" id="option3">
+                        <input class="form-check-input" name="group20" type="radio" id="radio122">
+                        <label class="form-check-label" for="radio122">Option 3</label>
+                    </div>
+                    
+                    <div class="form-check" id="option4">
+                            <input class="form-check-input" name="group20" type="radio" id="radio122">
+                            <label class="form-check-label" for="radio122">Option 4</label>
+                        </div>
+                </form>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+<!--/.Card-->
+    <!-- Start Button -->
+    <!-- Form -->
+    <!-- Done Button at end -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+$(document).ready();
+questions = ["What is the name of Mal's horse on any planet he used one?",
+"The Alliance officer and soldier costumes were left over from what 90's Scifi movie?",
+"The Alliance is formed by what two remaning superpowers of Earth?",
+"What set did the cast members prefer over their trailers/dressing rooms to wait between scenes?",
+"What popular full length animated movie did Josh Whedon, series creator have a screenplay credit on?",
+"What two cast members share the same birthday, three years apart?"];
+
+answers = {
+    answer1: {
+        a: "Fred",
+        b: "Rocinante",
+        c: "Silver",
+        d: "Secretariat",
+    },
+    answer2: {
+        a: "Starship Troopers",
+        b: "Galaxy Quest",
+        c: "Star Wars Episode I",
+        d: "Stargate",
+    },
+    answer3: {
+        a: "USA and China",
+        b:  "India and USA",
+        c: "China and India",
+        d:  "USA and Germany",
+    },
+    answer4: {
+        a:  "Ship's Lounge",
+        b:  "Cockpit",
+        c:  "Storgage Hold",
+        d:  "Mal's Quarters",
+    },
+    answer5: {
+        a: "Toy Story",
+        b: "Wall-E",
+        c: "The Lion King",
+        d: "Shrek",
+    },
+    answer6: {
+        a: "Nathan Fillion and Alan Tudyk",
+        b: "Morena Baccarin and Jewel Stait",
+        c: "Summer Glau and Sean Maher",
+        d: "Gina Torres and Adam Baldwin",
+    },
+    };
+
+        //hide questions until button clicked.
+        // $("#timer").toggle 
+        // <!-- Timer -->
+        var sec = 119
+
+var timer = setInterval(function() { 
+   $('#timer').text("Time remaining: " + sec-- + " seconds");
+   if (sec == -1) {
+          clearInterval(timer);
+   } 
+}, 1000);
+
+        // <!-- 8 questions -->
+        $("#q1").html(questions[0]);
+        $("#option1").val(answers.answer1.a);
+        $("#option2").val(answers.answer1.b);
+        $("#option3").val(answers.answer1.c);
+        $("#option4").val(answers.answer1.d);
+        // <!-- Results Score Board -->
+        // <!-- QUestions Answered Correctly -->
+        // <!-- Q's answered Incorrectly -->
+        // <!-- Q's not answered -->
+</script>
+</body>
+</html>
